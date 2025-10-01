@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eletrojen: Proteja Seu Lar, Simplifique Sua Vida</title>
+    <!-- Carregamento do Tailwind CSS para estilo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuração da fonte Inter e paleta de cores personalizada -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000; /* Preto sólido para o fundo principal */
+            color: #f0f0f0;
+        }
+        /* Cor Dourada da Marca (Gold/Bronze Metálico) */
+        .text-golden { color: #D4AF37; } 
+        .bg-golden { background-color: #D4AF37; }
+        .border-golden { border-color: #D4AF37; }
+        .bg-dark-gray { background-color: #111111; /* Cinza muito escuro/quase preto */ }
+        
+        /* Efeito de Dourado Sutil (para títulos) */
+        .text-foil {
+            text-shadow: 0 0 5px rgba(255, 215, 0, 0.4);
+            font-weight: 800;
+        }
+
+        /* Efeitos de Interação */
+        .btn-whatsapp { transition: all 0.3s; }
+        .btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(34, 197, 94, 0.6); }
+        .card-service { transition: transform 0.3s, box-shadow 0.3s; }
+        .card-service:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.9); }
+        .section-separator { border-top: 1px solid rgba(212, 175, 55, 0.3); }
+
+        /* Estilo para ícones de serviço: Fundo cinza escuro, borda dourada */
+        .icon-box {
+            background-color: #0f0f0f; 
+            border: 2px solid #D4AF37; 
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+        
+        /* Ajuste do botão principal de projeto */
+        .btn-project {
+            background-image: linear-gradient(145deg, #D4AF37, #FFD700);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+            transition: all 0.3s;
+        }
+        .btn-project:hover {
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.8);
+            transform: scale(1.05);
+        }
+        .equipment-card {
+            border: 1px solid #1f1f1f;
+        }
+        .equipment-card:hover {
+            border-color: #D4AF37;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- REMOÇÃO: Todo o código e dependências do Firebase foram removidos para atender à solicitação de NÃO USAR LOGIN/BACKEND. -->
+
+    <!-- Botão de WhatsApp Flutuante -->
+    <a href="https://wa.me/5511916999411" target="_blank" class="fixed bottom-6 right-6 z-50 p-4 rounded-full bg-green-500 text-white shadow-lg btn-whatsapp transition-transform duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.0003 2.00017C6.4863 2.00017 2.0003 6.48617 2.0003 12.0002C2.0003 14.1202 2.6903 16.1082 3.9203 17.7182L2.6103 22.0002L7.0503 20.7382C8.6183 21.6442 10.2883 22.0002 12.0003 22.0002C17.5143 22.0002 22.0003 17.5142 22.0003 12.0002C22.0003 6.48617 17.5143 2.00017 12.0003 2.00017ZM16.5103 14.5942C16.3263 14.9362 14.8063 15.6522 14.4983 15.8242C14.1903 15.9962 13.9483 16.0822 13.7063 16.0822C13.4643 16.0822 13.1043 15.9962 12.6523 15.7702C12.1928 15.5401 10.6053 15.0482 8.7903 13.4182C7.3823 12.1642 6.4803 10.6122 6.2243 10.1602C5.9763 9.7082 6.1823 9.5362 6.3543 9.3642C6.5003 9.2182 6.7063 8.9402 6.9123 8.6802C7.1183 8.4202 7.2583 8.2482 7.4223 8.2162C7.5763 8.1842 7.7483 8.1862 7.9023 8.1862C8.0563 8.1862 8.2463 8.2182 8.4183 8.4502C8.5903 8.6822 9.0703 9.8702 9.1223 9.9742C9.1743 10.0782 9.2503 10.2082 9.1743 10.3722C9.0983 10.5362 8.7563 11.0002 8.4803 11.2822C8.2123 11.5642 7.9423 11.7882 8.1683 12.1602C8.3943 12.5322 9.3823 14.1702 10.8263 15.3402C12.2703 16.5102 13.4283 16.8522 13.8003 16.9822C14.1723 17.1122 14.3963 17.0762 14.6383 16.8522C14.9083 16.6342 15.7943 15.7362 16.0763 15.3642C16.3583 14.9922 16.4883 14.7462 16.6023 14.6862C16.7163 14.6262 16.7163 14.6262 16.5103 14.5942Z"/>
+        </svg>
+    </a>
+
+    <!-- Caixa de Mensagens Customizada (Não é alert() ou confirm()) -->
+    <div id="message-box" class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 hidden">
+        <!-- Mensagens serão inseridas aqui por JS -->
+    </div>
+
+
+    <!-- 1. Header & Menu de Navegação -->
+    <header class="sticky top-0 z-40 bg-black/95 backdrop-blur-sm shadow-xl section-separator">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo (Imagem de referência) - CORRIGIDO com Placeholder -->
+            <a href="#inicio" class="flex items-center space-x-2">
+                <img src="https://placehold.co/120x40/000/D4AF37?text=ELETROJEN" alt="Logo Eletrojen Dourado" class="h-10 w-auto">
+            </a>
+
+            <!-- Menu Desktop -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#inicio" class="text-white hover:text-golden transition duration-200 font-medium">Início</a>
+                <a href="#servicos" class="text-white hover:text-golden transition duration-200 font-medium">Serviços</a>
+                <a href="#equipamentos" class="text-white hover:text-golden transition duration-200 font-medium">Equipamentos</a>
+                <a href="#projetos" class="text-golden hover:text-white transition duration-200 font-bold">Projetos Personalizados</a>
+                <a href="#contato" class="text-white hover:text-golden transition duration-200 font-medium">Contato</a>
+                
+                <a href="https://wa.me/5511916999411" target="_blank" class="px-5 py-2 bg-green-600 text-black rounded-full font-bold shadow-lg hover:bg-green-500 transition duration-300 flex items-center space-x-2">
+                    <span>Fale Conosco</span>
+                </a>
+            </div>
+
+            <!-- Botão do Menu Mobile (Hamburguer) -->
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none p-2 rounded-lg bg-dark-gray">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Menu Mobile (oculto por padrão) -->
+        <div id="mobile-menu" class="hidden md:hidden pb-4 bg-dark-gray/90">
+            <a href="#inicio" class="block py-3 px-6 text-white hover:bg-gray-800 border-t border-gray-800">Início</a>
+            <a href="#servicos" class="block py-3 px-6 text-white hover:bg-gray-800 border-t border-gray-800">Serviços</a>
+            <a href="#equipamentos" class="block py-3 px-6 text-white hover:bg-gray-800 border-t border-gray-800">Equipamentos</a>
+            <a href="#projetos" class="block py-3 px-6 text-golden hover:bg-gray-800 border-t border-gray-800 font-bold">Projetos Personalizados</a>
+            <a href="#contato" class="block py-3 px-6 text-white hover:bg-gray-800 border-t border-gray-800">Contato</a>
+            <a href="https://wa.me/5511916999411" target="_blank" class="block py-3 px-6 bg-green-600 text-black text-center mx-6 mt-4 rounded-lg font-bold">Fale Conosco via WhatsApp</a>
+        </div>
+    </header>
+
+    <!-- 2. Hero Section -->
+    <main id="inicio" class="relative overflow-hidden">
+        <!-- CORRIGIDO: Fundo do Hero com Placeholder -->
+        <div class="h-[75vh] md:h-[90vh] bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/111/D4AF37?text=ELETROJEN:+SOLUÇÕES+DE+SEGURANÇA'); background-position: center;">
+            <!-- Overlay escuro para melhor contraste do texto -->
+            <div class="absolute inset-0 bg-black opacity-70"></div>
+
+            <div class="relative z-10 max-w-7xl mx-auto px-6 h-full flex flex-col justify-center text-center md:text-left">
+                <h1 class="text-5xl sm:text-7xl lg:text-8xl font-extrabold leading-tight text-golden mb-4 drop-shadow-lg text-foil">
+                    Eletrojen: <br>
+                    Proteja Seu Lar, Simplifique Sua Vida.
+                </h1>
+                <p class="text-lg sm:text-2xl text-gray-300 max-w-4xl mb-10 mx-auto md:mx-0">
+                    Soluções completas e inovadoras em segurança eletrônica e elétrica em **Sorocaba e Região**.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="#orcamento" class="px-8 py-3 bg-golden text-black font-extrabold rounded-xl shadow-xl hover:bg-yellow-500 transition duration-300 transform hover:scale-105">
+                        PEÇA SEU ORÇAMENTO AGORA
+                    </a>
+                    <a href="#projetos" class="px-8 py-3 border-2 border-golden text-golden font-extrabold rounded-xl shadow-xl hover:bg-golden/20 transition duration-300 transform hover:scale-105">
+                        <span class="text-foil">MONTE SEU PROJETO</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- 3. SEÇÃO DE DESTAQUE: MONTE SEU PROJETO INTERATIVO (Mais espaçamento) -->
+    <section id="projetos" class="py-24 bg-dark-gray section-separator">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-golden mb-4 text-foil">
+                CRIE SEU PROJETO DE SEGURANÇA 3D
+            </h2>
+            <p class="text-xl text-gray-400 mb-12 max-w-4xl mx-auto">
+                Desenhe, visualize e receba um pré-orçamento instantâneo. A ferramenta mais inovadora do mercado de Sorocaba!
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
+                <!-- Card 1: Upload de Planta -->
+                <div class="bg-black p-8 rounded-3xl border-t-4 border-golden shadow-2xl hover:shadow-golden/30 transition duration-300 card-service">
+                    <div class="text-6xl text-golden mb-4">📄</div>
+                    <h3 class="text-2xl font-bold text-white mb-3">1. Use Sua Planta Baixa (PDF)</h3>
+                    <p class="text-gray-400">Importe seu layout e adicione câmeras, alarmes e cercas diretamente nos pontos exatos do seu imóvel.</p>
+                </div>
+                <!-- Card 2: Desenhe do Zero -->
+                <div class="bg-black p-8 rounded-3xl border-t-4 border-golden shadow-2xl hover:shadow-golden/30 transition duration-300 card-service">
+                    <div class="text-6xl text-golden mb-4">✏️</div>
+                    <h3 class="text-2xl font-bold text-white mb-3">2. Desenhe o Mapa do Zero</h3>
+                    <p class="text-gray-400">Utilize nosso Canvas intuitivo para desenhar paredes e ambientes se não tiver o arquivo da planta.</p>
+                </div>
+            </div>
+            
+            <button onclick="document.getElementById('tool-modal').classList.remove('hidden')" class="btn-project px-16 py-4 text-black text-2xl font-extrabold rounded-full shadow-lg">
+                <span class="flex items-center justify-center space-x-3">
+                    <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14m0 0h2m-6 0h6m-4 0v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4m-4 0h12"/></svg>
+                    <span>COMEÇAR PROJETO &rarr;</span>
+                </span>
+            </button>
+            <p class="text-sm text-gray-500 mt-6">Salve seu projeto localmente no final, sem necessidade de cadastro.</p>
+        </div>
+    </section>
+
+    <!-- 4. Seção Nossos Serviços (Layout mais aberto) -->
+    <section id="servicos" class="py-24 bg-dark-gray/90 section-separator">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-extrabold text-center text-white mb-16 text-foil">Nossos Serviços de Elite</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-10">
+                
+                <!-- Serviço 1: Cerca Elétrica -->
+                <div class="card-service flex flex-col items-center text-center group bg-black p-4 rounded-xl">
+                    <div class="icon-box p-4 rounded-xl mb-3 h-20 w-20 flex items-center justify-center">
+                        <svg class="h-10 w-10 text-golden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                    <h3 class="text-base font-bold text-white group-hover:text-golden transition">Cerca Elétrica</h3>
+                    <p class="text-xs text-gray-500 mt-1 hidden md:block">Concertina Flat, Tela Laminada.</p>
+                </div>
+
+                <!-- Serviço 2: Sistema de Câmeras -->
+                <div class="card-service flex flex-col items-center text-center group bg-black p-4 rounded-xl">
+                    <div class="icon-box p-4 rounded-xl mb-3 h-20 w-20 flex items-center justify-center">
+                        <svg class="h-10 w-10 text-golden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.552-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.448.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h3 class="text-base font-bold text-white group-hover:text-golden transition">Sistema de Câmeras</h3>
+                    <p class="text-xs text-gray-500 mt-1 hidden md:block">CFTV, IP, Speed Domes.</p>
+                </div>
+
+                <!-- Serviço 3: Alarmes -->
+                <div class="card-service flex flex-col items-center text-center group bg-black p-4 rounded-xl">
+                    <div class="icon-box p-4 rounded-xl mb-3 h-20 w-20 flex items-center justify-center">
+                        <svg class="h-10 w-10 text-golden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3 class="text-base font-bold text-white group-hover:text-golden transition">Alarmes</h3>
+                    <p class="text-xs text-gray-500 mt-1 hidden md:block">Residencial, comercial e incêndio.</p>
+                </div>
+
+                <!-- Serviço 4: Portão automático -->
+                <div class="card-service flex flex-col items-center text-center group bg-black p-4 rounded-xl">
+                    <div class="icon-box p-4 rounded-xl mb-3 h-20 w-20 flex items-center justify-center">
+                        <svg class="h-10 w-10 text-golden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-6 4l2 2m0 0l2-2m-2 2v4"/></svg>
+                    </div>
+                    <h3 class="text-base font-bold text-white group-hover:text-golden transition">Portão Automático</h3>
+                    <p class="text-xs text-gray-500 mt-1 hidden md:block">Instalação e manutenção.</p>
+                </div>
+
+                <!-- Serviço 5: Elétrica residencial e industrial (NOVO ÍCONE E NOME) -->
+                <div class="card-service flex flex-col items-center text-center group bg-black p-4 rounded-xl">
+                    <div class="icon-box p-4 rounded-xl mb-3 h-20 w-20 flex items-center justify-center">
+                        <!-- Ícone de Tomada/Plug (simboliza fiação e instalação) -->
+                        <svg class="h-10 w-10 text-golden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.636 18.364l9.193-9.193m0 0a2 2 0 10-2.829-2.828 2 2 0 002.829 2.828zm-9.193 9.193a2 2 0 102.828 2.829 2 2 0 00-2.828-2.829zM15 15l-4-4"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-base font-bold text-white group-hover:text-golden transition">Elétrica Completa</h3>
+                    <p class="text-xs text-gray-500 mt-1 hidden md:block">Projetos residenciais e industriais.</p>
+                </div>
+                
+                <!-- Serviço 6: Controle de acesso -->
+                <div class="card-service flex flex-col items-center text-center group bg-black p-4 rounded-xl">
+                    <div class="icon-box p-4 rounded-xl mb-3 h-20 w-20 flex items-center justify-center">
+                        <svg class="h-10 w-10 text-golden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                    </div>
+                    <h3 class="text-base font-bold text-white group-hover:text-golden transition">Controle de Acesso</h3>
+                    <p class="text-xs text-gray-500 mt-1 hidden md:block">Fechaduras digitais e portaria.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Seção Equipamentos -->
+    <section id="equipamentos" class="py-24 bg-dark-gray section-separator">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-extrabold text-center text-white mb-16 text-foil">Equipamentos e Tecnologia (Intelbras, PPA)</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                
+                <!-- Produto 1: Kit CFTV - CORRIGIDO com Placeholder -->
+                <div class="bg-dark-gray/50 rounded-xl shadow-2xl overflow-hidden card-service equipment-card">
+                    <img src="https://placehold.co/600x400/000000/FFFFFF?text=Kit+CFTV+4+Câmeras" alt="Kit CFTV 4 Câmeras Multi HD Intelbras" class="w-full h-56 object-contain object-center bg-white border-b border-gray-800 p-2">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Kit CFTV 4 Câmeras Multi HD</h3>
+                        <p class="text-gray-400 text-sm mb-4">Solução completa com DVR, HD Purple e 4 câmeras de alta qualidade para monitoramento 24h.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-golden text-foil">R$ 1.999,90</span>
+                            <button onclick="showNotification('Item adicionado ao projeto! (E-commerce)', 'info')" class="px-4 py-2 bg-golden text-black rounded-full font-bold text-sm hover:bg-yellow-500 transition">
+                                Adicionar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 2: Câmera Speed Dome IP - CORRIGIDO com Placeholder -->
+                <div class="bg-dark-gray/50 rounded-xl shadow-2xl overflow-hidden card-service equipment-card">
+                    <img src="https://placehold.co/600x400/000000/FFFFFF?text=Câmera+Speed+Dome" alt="Câmera IP Intelbras Speed Dome" class="w-full h-56 object-contain object-center bg-white border-b border-gray-800 p-2">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Câmera IP Wi-Fi Speed Dome PTZ</h3>
+                        <p class="text-gray-400 text-sm mb-4">Câmera com giro 360°, Wi-Fi, áudio bidirecional e acesso remoto via app Mibo.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-golden text-foil">R$ 499,90</span>
+                            <button onclick="showNotification('Item adicionado ao projeto! (E-commerce)', 'info')" class="px-4 py-2 bg-golden text-black rounded-full font-bold text-sm hover:bg-yellow-500 transition">
+                                Adicionar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 3: Kit Alarme - CORRIGIDO com Placeholder -->
+                <div class="bg-dark-gray/50 rounded-xl shadow-2xl overflow-hidden card-service equipment-card">
+                    <img src="https://placehold.co/600x400/000000/FFFFFF?text=Kit+Alarme+Monitorado" alt="Kit Alarme Monitorado AMT 2018 Intelbras" class="w-full h-56 object-contain object-center bg-white border-b border-gray-800 p-2">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Kit Alarme Monitorado AMT 2018</h3>
+                        <p class="text-gray-400 text-sm mb-4">Central de alarme completa, com sensores de presença e controle remoto via aplicativo.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-golden text-foil">R$ 899,00</span>
+                            <button onclick="showNotification('Item adicionado ao projeto! (E-commerce)', 'info')" class="px-4 py-2 bg-golden text-black rounded-full font-bold text-sm hover:bg-yellow-500 transition">
+                                Adicionar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="#orcamento" class="inline-block px-8 py-3 border-2 border-golden text-golden font-bold rounded-xl hover:bg-golden/30 transition duration-300 transform hover:scale-105">
+                    Solicitar Catálogo Completo de Equipamentos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Seção ORÇAMENTO RÁPIDO (Mantida como Lead Gen) -->
+    <section id="orcamento" class="py-24 bg-dark-gray/50 section-separator">
+        <div class="max-w-2xl mx-auto px-6">
+             <h2 class="text-4xl font-extrabold text-center text-white mb-4 text-foil">Finalize Seu Orçamento</h2>
+            <p class="text-center text-gray-400 text-lg mb-10">Envie o projeto que você criou para nossa equipe e receba um orçamento final sem compromisso.</p>
+            
+            <!-- REMOÇÃO: Seção de Login/Painel do Usuário removida -->
+            
+            <form id="contact-form" class="space-y-6 bg-black p-8 rounded-2xl shadow-2xl border border-golden/30">
+                <div class="space-y-4">
+                    <input type="text" id="name" required placeholder="Nome Completo" class="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:ring-golden focus:border-golden placeholder-gray-500">
+                    <input type="email" id="email" required placeholder="E-mail" class="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:ring-golden focus:border-golden placeholder-gray-500">
+                    <input type="tel" id="phone" required placeholder="Telefone (WhatsApp)" class="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:ring-golden focus:border-golden placeholder-gray-500">
+                </div>
+                
+                <p class="text-sm text-gray-400">Ao clicar em "Finalizar", os dados do seu projeto serão anexados ao seu contato.</p>
+
+                <button type="submit" class="w-full px-4 py-3 bg-golden text-black font-extrabold text-lg rounded-lg shadow-lg hover:bg-yellow-500 transition duration-300 transform hover:scale-[1.01]">
+                    FINALIZAR E ENVIAR PROJETO
+                </button>
+            </form>
+            <p class="text-center text-sm text-gray-600 mt-6">Preferência por contato rápido? Use nosso botão de WhatsApp flutuante.</p>
+        </div>
+    </section>
+
+    <!-- 8. Footer -->
+    <footer id="contato" class="bg-black py-16 section-separator">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+            
+            <div class="md:col-span-2">
+                 <!-- Logo no Footer - CORRIGIDO com Placeholder -->
+                 <img src="https://placehold.co/120x40/000/D4AF37?text=ELETROJEN" alt="Logo Eletrojen Dourado" class="h-10 w-auto mb-4">
+                <p class="text-gray-400">Excelência em segurança e automação em Sorocaba. Projetos sob medida e garantia de 1 ano nos equipamentos.</p>
+            </div>
+
+            <div>
+                <h4 class="text-xl font-semibold text-white mb-4">Links Rápidos</h4>
+                <ul class="space-y-3 text-gray-400">
+                    <li><a href="#servicos" class="hover:text-golden transition duration-200">Serviços Completos</a></li>
+                    <li><a href="#equipamentos" class="hover:text-golden transition duration-200">Catálogo de Equipamentos</a></li>
+                    <li><a href="#projetos" class="hover:text-golden transition duration-200">Monte Seu Projeto</a></li>
+                    <li><a href="#orcamento" class="hover:text-golden transition duration-200">Orçamento Grátis</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-xl font-semibold text-white mb-4">Fale Conosco</h4>
+                <p class="text-gray-400 space-y-3">
+                    <span class="block">WhatsApp: <a href="https://wa.me/5511916999411" target="_blank" class="text-green-400 hover:text-green-300 font-bold">11 91699-9411</a></span>
+                    <span class="block">E-mail: contato@eletrojen.com.br (Mock)</span>
+                    <span class="block">Localização: Sorocaba/SP</span>
+                </p>
+                <!-- Placeholder para Mapa -->
+                <div class="mt-6 w-full h-24 bg-dark-gray rounded-lg flex items-center justify-center text-gray-500 border border-gray-800">
+                    [Placeholder Mapa]
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-sm text-gray-700 mt-12 pt-8 border-t border-gray-900">
+            &copy; 2025 Eletrojen. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <!-- MODAL - Ferramenta de Projeto de Segurança Interativo -->
+    <div id="tool-modal" class="fixed inset-0 bg-black bg-opacity-95 z-50 hidden p-4 flex items-center justify-center">
+        <div class="bg-dark-gray w-full max-w-7xl h-[95vh] rounded-3xl shadow-2xl p-6 md:p-10 border-4 border-golden/50 relative overflow-hidden">
+            <h2 class="text-3xl font-bold text-golden mb-4 text-foil">CONSTRUTOR DE PROJETOS</h2>
+            <p class="text-gray-400 mb-6">Desenhe sua planta ou use o Canvas para montar seu sistema de segurança de forma interativa.</p>
+            
+            <div class="flex flex-col md:flex-row h-[calc(95vh-180px)] space-y-6 md:space-y-0 md:space-x-6">
+                
+                <!-- Coluna de Ferramentas (Sidebar) -->
+                <div class="w-full md:w-72 bg-black p-4 rounded-xl flex-shrink-0 overflow-y-auto border border-gray-900 shadow-inner">
+                    <h3 class="text-xl font-semibold text-white mb-4 border-b border-golden/50 pb-2">Ferramentas de Desenho</h3>
+                    
+                    <button id="tool-draw-wall" class="w-full py-2 mb-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition">Desenhar Parede</button>
+                    <button id="tool-add-camera" class="w-full py-2 mb-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition">Adicionar Câmera</button>
+                    <button id="tool-add-alarm" class="w-full py-2 mb-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition">Adicionar Sensor</button>
+                    
+                    <h3 class="text-xl font-semibold text-white mt-6 mb-4 border-b border-golden/50 pb-2">Ações do Projeto</h3>
+                    <input type="text" id="project-name-input" placeholder="Nome do Projeto (Obrigatório)" class="w-full px-3 py-2 bg-gray-900 border border-gray-700 rounded-lg text-white mb-4 placeholder-gray-500">
+                    
+                    <!-- Função Salvar Projeto adaptada para DOWNLOAD LOCAL -->
+                    <button onclick="saveProjectLocal()" class="w-full py-2 mb-3 bg-green-600 text-white font-bold rounded-lg hover:bg-green-500 transition">Salvar Projeto (Arquivo JSON)</button>
+                    <button onclick="calculateAndShowCost()" class="w-full py-2 mb-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-500 transition">Gerar Pré-Orçamento</button>
+                    <!-- Novo botão de Limpar Canvas -->
+                    <button onclick="clearCanvas()" class="w-full py-2 mb-3 bg-red-600 text-white font-bold rounded-lg hover:bg-red-500 transition">Limpar Canvas</button>
+
+                    <h3 class="text-xl font-semibold text-white mt-6 mb-4 border-b border-golden/50 pb-2">Planta Baixa (PDF)</h3>
+                    <input type="file" id="pdf-upload" accept=".pdf" class="w-full text-sm text-gray-300 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-golden file:text-black hover:file:bg-yellow-500"/>
+                    <p class="text-xs text-gray-500 mt-2">O Canvas adaptará seu PDF para a edição.</p>
+                </div>
+
+                <!-- Área Interativa (Canvas + Resumo do Orçamento) -->
+                <div class="flex-grow flex flex-col space-y-4">
+                    <!-- Painel de Orçamento -->
+                    <div id="cost-summary-panel" class="bg-black p-4 rounded-xl border border-golden/50 shadow-md hidden">
+                        <h4 class="text-lg font-bold text-golden">Resumo do Pré-Orçamento:</h4>
+                        <div id="cost-details" class="text-sm text-gray-300 mt-2 grid grid-cols-2 gap-x-4">
+                            <!-- Detalhes de custo e itens vêm aqui -->
+                        </div>
+                    </div>
+                    
+                    <div class="flex-grow bg-white rounded-xl overflow-hidden shadow-inner border-2 border-golden/30 relative">
+                        <canvas id="security-project-canvas" class="w-full h-full"></canvas>
+                        <div id="canvas-overlay" class="absolute inset-0 flex items-center justify-center text-gray-800 text-2xl font-bold pointer-events-none">
+                            Clique em uma ferramenta ou faça upload da sua planta para começar!
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Botão Fechar Modal -->
+            <button onclick="document.getElementById('tool-modal').classList.add('hidden')" class="absolute top-4 right-6 text-white hover:text-golden transition duration-300 p-2 rounded-full bg-black/50">
+                <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+    </div>
+
+
+    <!-- JavaScript para interatividade (Menu Mobile, Formulário, Canvas e Download Local) -->
+    <script>
+        // --- FUNÇÕES GERAIS ---
+
+        // Função de notificação customizada
+        function showNotification(message, type = 'success') {
+            const container = document.getElementById('message-box');
+            let color = 'bg-green-600';
+            if (type === 'error') color = 'bg-red-600';
+            if (type === 'info') color = 'bg-blue-600';
+
+            container.innerHTML = `<p class="p-3 ${color} text-white rounded-lg shadow-xl">${message}</p>`;
+            container.classList.remove('hidden');
+            setTimeout(() => {
+                container.classList.add('hidden');
+                container.innerHTML = '';
+            }, 3000);
+        }
+        window.showNotification = showNotification; // Expondo para o HTML
+        
+        // --- 1. Lógica do Menu Mobile ---
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // --- 2. Lógica do Formulário de Contato (Com anexo do Projeto) ---
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            
+            // Simulação de que os dados do projeto seriam enviados
+            const projectData = {
+                name: "Projeto Anexado - " + name,
+                elements: elements.length,
+                costSummary: calculateProjectCost()
+            };
+
+            showNotification(`Obrigado, ${name}! Seu pedido de orçamento (R$ ${projectData.costSummary.totalCost.toFixed(2).replace('.', ',')}) foi enviado. Nossa equipe entrará em contato pelo WhatsApp ${phone}.`, 'success');
+            
+            // Aqui seria a lógica real de envio de dados do formulário e do projeto (projectData) para o servidor.
+            document.getElementById('contact-form').reset();
+        });
+
+
+        // --- 3. Lógica da Ferramenta de Projeto (Canvas) ---
+        const canvas = document.getElementById('security-project-canvas');
+        const ctx = canvas.getContext('2d');
+        let drawingMode = 'wall';
+        let isDrawing = false;
+        let elements = [];
+        let startX, startY;
+        let selectedElement = null;
+
+        // Dimensões do Canvas (para torná-lo responsivo)
+        function resizeCanvas() {
+            const container = canvas.parentElement;
+            canvas.width = container.clientWidth;
+            canvas.height = container.clientHeight;
+            draw();
+        }
+        window.addEventListener('resize', resizeCanvas);
+        window.onload = function() {
+            resizeCanvas();
+        };
+
+        // Ícones de Segurança e suas propriedades (Custos para pré-orçamento)
+        const iconSpecs = {
+            // Custos base de equipamentos (sem instalação)
+            camera: { color: '#FF0000', size: 18, type: 'camera', name: 'Câmera IP/CFTV', cost: 499.90 },
+            alarm: { color: '#0000FF', size: 18, type: 'sensor', name: 'Sensor de Alarme', cost: 120.00 },
+            // A parede tem custo zero, mas estimamos um custo de fiação por comprimento (Custo por pixel)
+            wall: { color: '#333333', size: 2, type: 'line', costPerUnit: 0.50 } 
+        };
+        
+        // --- FUNÇÕES DE DESENHO ---
+        function drawCamera(x, y, size) {
+            const radius = size * 0.3;
+            ctx.fillStyle = iconSpecs.camera.color;
+            ctx.strokeStyle = '#000';
+            ctx.lineWidth = 1;
+            ctx.fillRect(x - radius, y, radius * 2, radius * 0.5);
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, Math.PI * 2, false);
+            ctx.fill();
+            ctx.stroke();
+            ctx.fillStyle = '#000';
+            ctx.beginPath();
+            ctx.arc(x + radius * 0.3, y - radius * 0.1, radius * 0.3, 0, Math.PI * 2, false);
+            ctx.fill();
+        }
+
+        function drawSensor(x, y, size) {
+            const halfSize = size * 0.5;
+            ctx.fillStyle = iconSpecs.alarm.color;
+            ctx.strokeStyle = '#000';
+            ctx.lineWidth = 1;
+            ctx.fillRect(x - halfSize, y - halfSize, size, halfSize * 1.5);
+            ctx.beginPath();
+            ctx.moveTo(x - halfSize, y + halfSize * 0.5);
+            ctx.lineTo(x + halfSize, y + halfSize * 0.5);
+            ctx.lineTo(x, y + halfSize * 1.5);
+            ctx.closePath();
+            ctx.fill();
+            ctx.stroke();
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpa o Canvas
+
+            elements.forEach(el => {
+                if (el === selectedElement) {
+                    ctx.strokeStyle = '#D4AF37'; // Dourado
+                    ctx.lineWidth = 3;
+                    if (el.type === 'line') {
+                         ctx.strokeRect(Math.min(el.startX, el.endX) - 5, Math.min(el.startY, el.endY) - 5, Math.abs(el.endX - el.startX) + 10, Math.abs(el.endY - el.startY) + 10);
+                    } else {
+                         ctx.strokeRect(el.x - el.size / 2 - 5, el.y - el.size / 2 - 5, el.size + 10, el.size + 10);
+                    }
+                }
+                
+                ctx.strokeStyle = el.color;
+                ctx.lineWidth = el.lineWidth || 2;
+
+                if (el.type === 'line') {
+                    ctx.beginPath();
+                    ctx.moveTo(el.startX, el.startY);
+                    ctx.lineTo(el.endX, el.endY);
+                    ctx.stroke();
+                } else if (el.type === 'camera') {
+                    drawCamera(el.x, el.y, el.size);
+                } else if (el.type === 'sensor') {
+                    drawSensor(el.x, el.y, el.size);
+                }
+            });
+        }
+        
+        // --- LÓGICA DO CANVAS E MOUSE/TOUCH ---
+        
+        canvas.addEventListener('mousedown', handleStart);
+        canvas.addEventListener('mousemove', handleMove);
+        canvas.addEventListener('mouseup', handleEnd);
+        canvas.addEventListener('mouseleave', handleEnd);
+        canvas.addEventListener('touchstart', (e) => handleStart(e.touches[0]));
+        canvas.addEventListener('touchmove', (e) => handleMove(e.touches[0]));
+        canvas.addEventListener('touchend', handleEnd);
+
+        function getCoords(e) {
+            const rect = canvas.getBoundingClientRect();
+            return {
+                x: e.clientX - rect.left,
+                y: e.clientY - rect.top
+            };
+        }
+
+        function handleStart(e) {
+            const { x, y } = getCoords(e);
+            startX = x;
+            startY = y;
+            isDrawing = true;
+            document.getElementById('canvas-overlay').classList.add('hidden');
+
+            if (drawingMode === 'wall') {
+                const wallSpec = iconSpecs.wall;
+                elements.push({
+                    type: wallSpec.type,
+                    startX: startX,
+                    startY: startY,
+                    endX: startX,
+                    endY: startY,
+                    color: wallSpec.color,
+                    lineWidth: wallSpec.size
+                });
+                selectedElement = elements[elements.length - 1];
+            } else if (drawingMode === 'camera' || drawingMode === 'alarm') {
+                const iconDef = iconSpecs[drawingMode];
+                elements.push({
+                    type: iconDef.type,
+                    x: x,
+                    y: y,
+                    size: iconDef.size,
+                    color: iconDef.color,
+                    name: iconDef.name,
+                    cost: iconDef.cost 
+                });
+                isDrawing = false; 
+                draw();
+            }
+        }
+
+        function handleMove(e) {
+            if (!isDrawing) return;
+            const { x, y } = getCoords(e);
+
+            if (drawingMode === 'wall' && selectedElement) {
+                selectedElement.endX = x;
+                selectedElement.endY = y;
+                draw();
+            }
+        }
+
+        function handleEnd() {
+            if (!isDrawing) return;
+            isDrawing = false;
+            if (drawingMode === 'wall') {
+                selectedElement = null; 
+            }
+            draw();
+        }
+
+        // --- CÁLCULO DE CUSTO E ORÇAMENTO ---
+        
+        function calculateProjectCost() {
+            let totalCost = 0;
+            let itemCounts = {
+                'Câmera IP/CFTV': 0,
+                'Sensor de Alarme': 0,
+                'Custo de Fiação/Instalação Estimado': 0
+            };
+
+            elements.forEach(el => {
+                if (el.type === 'camera' || el.type === 'sensor') {
+                    totalCost += el.cost;
+                    itemCounts[el.name]++;
+                } else if (el.type === 'line') {
+                    const dx = el.endX - el.startX;
+                    const dy = el.endY - el.startY;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    const lineCost = distance * iconSpecs.wall.costPerUnit;
+                    totalCost += lineCost;
+                    itemCounts['Custo de Fiação/Instalação Estimado'] += lineCost;
+                }
+            });
+
+            const serviceFee = totalCost * 0.15; 
+            totalCost += serviceFee;
+            itemCounts['Taxa de Serviço/Instalação (15%)'] = serviceFee;
+            
+            for (let key in itemCounts) {
+                if (typeof itemCounts[key] === 'number' && key.includes('Custo')) {
+                    itemCounts[key] = parseFloat(itemCounts[key].toFixed(2));
+                }
+            }
+
+            return { totalCost: parseFloat(totalCost.toFixed(2)), itemCounts };
+        }
+
+        window.calculateAndShowCost = () => {
+            if (elements.length === 0) {
+                window.showNotification('Adicione itens (Câmeras, Sensores) ou paredes ao Canvas para gerar o orçamento.', 'error');
+                document.getElementById('cost-summary-panel').classList.add('hidden');
+                return;
+            }
+
+            const { totalCost, itemCounts } = calculateProjectCost();
+            const detailsElement = document.getElementById('cost-details');
+            
+            let html = '';
+            
+            html += '<p class="text-white font-bold col-span-2 mt-2 mb-1">Equipamentos e Serviços:</p>';
+            
+            if (itemCounts['Câmera IP/CFTV'] > 0) {
+                html += `<p class="col-span-1">Câmeras:</p><p class="col-span-1 text-right">${itemCounts['Câmera IP/CFTV']} un. x R$ ${iconSpecs.camera.cost.toFixed(2)}</p>`;
+            }
+            if (itemCounts['Sensor de Alarme'] > 0) {
+                html += `<p class="col-span-1">Sensores:</p><p class="col-span-1 text-right">${itemCounts['Sensor de Alarme']} un. x R$ ${iconSpecs.alarm.cost.toFixed(2)}</p>`;
+            }
+            
+            if (itemCounts['Custo de Fiação/Instalação Estimado'] > 0) {
+                 html += `<p class="col-span-1 text-gray-400">Fiação e Instalação (Est.):</p><p class="col-span-1 text-right text-gray-400">R$ ${itemCounts['Custo de Fiação/Instalação Estimado'].toFixed(2)}</p>`;
+            }
+            
+            if (itemCounts['Taxa de Serviço/Instalação (15%)'] > 0) {
+                 html += `<p class="col-span-1 text-gray-400">Taxa de Serviço (15%):</p><p class="col-span-1 text-right text-gray-400">R$ ${itemCounts['Taxa de Serviço/Instalação (15%)'].toFixed(2)}</p>`;
+            }
+
+            html += `<p class="col-span-2 border-t border-golden/50 mt-3 pt-3 text-lg font-extrabold text-golden text-foil">TOTAL ESTIMADO:</p>`;
+            html += `<p class="col-span-2 text-right text-2xl font-extrabold text-golden text-foil">R$ ${totalCost.toFixed(2).replace('.', ',')}</p>`;
+
+            detailsElement.innerHTML = html;
+            document.getElementById('cost-summary-panel').classList.remove('hidden');
+            window.showNotification(`Pré-Orçamento gerado! Valor total estimado: R$ ${totalCost.toFixed(2).replace('.', ',')}`, 'success');
+        }
+
+
+        // --- FUNÇÃO DE DOWNLOAD LOCAL (NOVA) ---
+        window.saveProjectLocal = () => {
+            const projectName = document.getElementById('project-name-input').value.trim();
+            if (!projectName) {
+                window.showNotification('Por favor, defina um nome para o projeto antes de salvar.', 'error');
+                return;
+            }
+            if (elements.length === 0) {
+                 window.showNotification('Adicione elementos ao projeto antes de salvar.', 'error');
+                 return;
+            }
+
+            const { totalCost, itemCounts } = calculateProjectCost();
+            const projectData = {
+                name: projectName,
+                timestamp: new Date().toISOString(),
+                costSummary: { totalCost, itemCounts },
+                // Salvamos os elementos desenhados para que possam ser reabertos se necessário
+                elements: elements 
+            };
+
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(projectData, null, 2));
+            const downloadAnchorNode = document.createElement('a');
+            downloadAnchorNode.setAttribute("href", dataStr);
+            downloadAnchorNode.setAttribute("download", `${projectName}_Eletrojen_Projeto.json`);
+            document.body.appendChild(downloadAnchorNode);
+            downloadAnchorNode.click();
+            downloadAnchorNode.remove();
+            
+            window.showNotification(`Projeto '${projectName}' salvo localmente como JSON!`, 'success');
+        }
+
+
+        // --- FUNÇÕES DE AÇÃO DO PROJETO ---
+        
+        document.getElementById('tool-draw-wall').addEventListener('click', () => {
+            drawingMode = 'wall';
+            window.showNotification('Modo de desenho: Parede (clique e arraste)', 'info');
+        });
+        document.getElementById('tool-add-camera').addEventListener('click', () => {
+            drawingMode = 'camera';
+            window.showNotification('Modo de desenho: Câmera (clique para adicionar) - Ícone REDONDO vermelho', 'info');
+        });
+        document.getElementById('tool-add-alarm').addEventListener('click', () => {
+            drawingMode = 'alarm';
+            window.showNotification('Modo de desenho: Sensor (clique para adicionar) - Ícone RETANGULAR azul', 'info');
+        });
+
+        window.clearCanvas = () => {
+            if (elements.length > 0) {
+                 window.showNotification('Canvas limpo com sucesso.', 'success');
+                 elements = [];
+                 draw();
+                 document.getElementById('canvas-overlay').classList.remove('hidden');
+                 document.getElementById('cost-summary-panel').classList.add('hidden');
+            } else {
+                 window.showNotification('O Canvas já está vazio.', 'info');
+            }
+        };
+        
+        // --- Lógica de Upload de PDF (Simulação) ---
+        document.getElementById('pdf-upload').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file && file.type === 'application/pdf') {
+                window.showNotification(`PDF '${file.name}' carregado com sucesso. Agora, adicione seus pontos de segurança!`, 'success');
+                document.getElementById('canvas-overlay').textContent = `Planta: ${file.name} - Adicione pontos de segurança`;
+                elements = []; 
+                draw();
+                document.getElementById('cost-summary-panel').classList.add('hidden');
+            } else {
+                window.showNotification('Por favor, selecione um arquivo PDF válido.', 'error');
+            }
+        });
+
+        
+    </script>
+</body>
+</html>
